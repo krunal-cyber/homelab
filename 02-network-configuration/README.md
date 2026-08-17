@@ -13,7 +13,7 @@ To configure networking between virtual machines using VMware NAT and Local Netw
 
 ## Network Topology
 
-!\[Figure 1.5 – Network topology](./screenshots/network-topology.jpeg)
+![Figure 1.5 – Network topology](./screenshots/network-topology.jpeg)
 *Figure 1.5 – Network topology*
 
 ## Network Configuration
@@ -82,24 +82,24 @@ The virtual network was successfully configured using VMware NAT and Local Netwo
 
 ### Evidence
 
-!\[Figure 1.1 – VMware network adapter settings](./screenshots/network-adapters.jpeg)
+![Figure 1.1 – VMware network adapter settings](./screenshots/network-adapters.jpeg)
 *Figure 1.1 – VMware network adapter settings*
 
-!\[Figure 1.2 – Ubuntu ip a output](./screenshots/ubuntu-ip-a.png)
+![Figure 1.2 – Ubuntu ip a output](./screenshots/ubuntu-ip-a.png)
 *Figure 1.2 – Output of `ip a` on Ubuntu*
 
-!\[Figure 1.3 – Ubuntu ip route output](./screenshots/ubuntu-ip-route.png)
+![Figure 1.3 – Ubuntu ip route output](./screenshots/ubuntu-ip-route.png)
 *Figure 1.3 – Output of `ip route` on Ubuntu*
 
-!\[Figure 1.4 – Windows ipconfig output](./screenshots/windows-ipconfig.png)
+![Figure 1.4 – Windows ipconfig output](./screenshots/windows-ipconfig.png)
 *Figure 1.4 – Output of `ipconfig /all` on Windows*
 
-!\[Figure 1.5 – Parrot ip a output](./screenshots/parrot-ip-a.png)
+![Figure 1.5 – Parrot ip a output](./screenshots/parrot-ip-a.png)
 *Figure 1.5 – Output of `ip a` on Parrot*
 
-!\[Figure 1.6 – Ubuntu pinging the internet](./screenshots/ubuntu-ping-internet.png)
+![Figure 1.6 – Ubuntu pinging the internet](./screenshots/ubuntu-ping-internet.png)
 *Figure 1.6 – Ubuntu successfully pinging the internet via NAT*
 
-!\[Figure 1.7 – Parrot pinging other VMs](./screenshots/parrot-ping-vms.png)
+![Figure 1.7 – Parrot pinging other VMs](./screenshots/parrot-ping-vms.png)
 *Figure 1.7 – Parrot successfully pinging other VMs on the Local Network*
 
