@@ -53,10 +53,6 @@ groups
 
 The `whoami` command identifies the current user, while `id` displays UID, GID and group membership.
 
-### Evidence
-
-!\[Figure 4.1 – Current user, UID, GID and group information](./screenshots/01-user-id-groups.png)
-*Figure 4.1 – Current user, UID, GID and group information*
 
 \---
 
@@ -78,10 +74,6 @@ The normal user remained the logged-in user, while the `sudo` command executed w
 
 The `root` user is normally identified by UID `0`.
 
-### Evidence
-
-!\[Figure 4.2 – Root user identity and sudo execution](./screenshots/02-root-and-sudo.png)
-*Figure 4.2 – Root user identity and sudo execution*
 
 \---
 
@@ -108,14 +100,6 @@ The temporary file was then removed:
 ```bash
 sudo rm /testfile
 ```
-
-### Evidence
-
-!\[Figure 4.3 – Permission denied for a privileged operation](./screenshots/03-permission-denied.png)
-*Figure 4.3 – Permission denied for a privileged operation*
-
-!\[Figure 4.4 – Same operation successfully executed with sudo](./screenshots/04-sudo-command.png)
-*Figure 4.4 – Same operation successfully executed with sudo*
 
 \---
 
@@ -150,11 +134,6 @@ The result was:
 ```text
 labuser
 ```
-
-### Evidence
-
-!\[Figure 4.5 – Creation and verification of labuser](./screenshots/05-create-labuser.png)
-*Figure 4.5 – Creation and verification of labuser*
 
 \---
 
@@ -194,10 +173,6 @@ and receive:
 root
 ```
 
-### Evidence
-
-!\[Figure 4.6 – labuser sudo authorization](./screenshots/06-sudo-group.png)
-*Figure 4.6 – labuser before and after sudo authorization*
 
 \---
 
@@ -331,10 +306,6 @@ The syntax is:
 chown USER:GROUP FILE
 ```
 
-### Evidence
-
-!\[Figure 4.7 – File ownership before and after chown](./screenshots/07-file-ownership.png)
-*Figure 4.7 – File ownership before and after chown*
 
 \---
 
@@ -427,10 +398,6 @@ Others -> no permissions
 
 Strict permissions such as `600` are particularly important for sensitive files such as private SSH keys.
 
-### Evidence
-
-!\[Figure 4.8 – chmod 600 and resulting permissions](./screenshots/08-chmod-600.png)
-*Figure 4.8 – chmod 600 and resulting permissions*
 
 \---
 
@@ -497,10 +464,6 @@ Important directories were identified:
 |`/dev`|Device interfaces|
 |`/proc`|Kernel and process information|
 
-### Evidence
-
-!\[Figure 4.9 – Linux filesystem root directories](./screenshots/09-filesystem-structure.png)
-*Figure 4.9 – Linux filesystem root directories*
 
 \---
 
@@ -520,10 +483,6 @@ sudo grep "sudo" /var/log/auth.log | tail
 
 The logs can contain information about authentication activity, user sessions and commands executed through `sudo`.
 
-### Evidence
-
-!\[Figure 4.10 – Authentication and sudo log entries](./screenshots/10-auth-log.png)
-*Figure 4.10 – Authentication and sudo log entries*
 
 \---
 
