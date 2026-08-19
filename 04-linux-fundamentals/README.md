@@ -704,33 +704,33 @@ sudo grep "sudo" /var/log/auth.log | tail
 
 ## Evidence
 
-!\[Figure 4.1 – Current user, UID, GID and group information](./screenshots/01-user-id-groups.png)
+![Figure 4.1 – Current user, UID, GID and group information](./screenshots/01-user-id-groups.png)
 *Figure 4.1 – Current user, UID, GID and group information*
 
-!\[Figure 4.2 – Root user identity and sudo execution](./screenshots/02-root-and-sudo.png)
+![Figure 4.2 – Root user identity and sudo execution](./screenshots/02-root-and-sudo.png)
 *Figure 4.2 – Root user identity and sudo execution*
 
-!\[Figure 4.3 – Permission denied for a privileged operation](./screenshots/03-permission-denied.png)
+![Figure 4.3 – Permission denied for a privileged operation](./screenshots/03-permission-denied.png)
 *Figure 4.3 – Permission denied for a privileged operation*
 
-!\[Figure 4.4 – Same operation successfully executed with sudo](./screenshots/04-sudo-command.png)
+![Figure 4.4 – Same operation successfully executed with sudo](./screenshots/04-sudo-command.png)
 *Figure 4.4 – Same operation successfully executed with sudo*
 
-!\[Figure 4.5 – Creation and verification of labuser](./screenshots/05-create-labuser.png)
+![Figure 4.5 – Creation and verification of labuser](./screenshots/05-create-labuser.png)
 *Figure 4.5 – Creation and verification of labuser*
 
-!\[Figure 4.6 – labuser sudo authorization](./screenshots/06-sudo-group.png)
+![Figure 4.6 – labuser sudo authorization](./screenshots/06-sudo-group.png)
 *Figure 4.6 – labuser before and after sudo authorization*
 
-!\[Figure 4.7 – File ownership before and after chown](./screenshots/07-file-ownership.png)
+![Figure 4.7 – File ownership before and after chown](./screenshots/07-file-ownership.png)
 *Figure 4.7 – File ownership before and after chown*
 
-!\[Figure 4.8 – chmod 600 and resulting permissions](./screenshots/08-chmod-600.png)
+![Figure 4.8 – chmod 600 and resulting permissions](./screenshots/08-chmod-600.png)
 *Figure 4.8 – chmod 600 and resulting permissions*
 
-!\[Figure 4.9 – Linux filesystem root directories](./screenshots/09-filesystem-structure.png)
+![Figure 4.9 – Linux filesystem root directories](./screenshots/09-filesystem-structure.png)
 *Figure 4.9 – Linux filesystem root directories*
 
-!\[Figure 4.10 – Authentication and sudo log entries](./screenshots/10-auth-log.png)
+![Figure 4.10 – Authentication and sudo log entries](./screenshots/10-auth-log.png)
 *Figure 4.10 – Authentication and sudo log entries*
 
