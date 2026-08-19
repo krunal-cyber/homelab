@@ -1,44 +1,47 @@
-# Lab 04 — Linux OS Fundamentals: Users, Privileges, Permissions & File Structure
+# Lab 04 — Linux OS Fundamentals: Users, Privileges, Permissions \& File Structure
 
 ## Aim
+
 To strengthen Linux operating system fundamentals required for cybersecurity by practically understanding users, groups, root privileges, `sudo`, file ownership, permissions, filesystem structure, authentication logging, and the principle of least privilege.
 
 ## Objectives
-- Understand Linux users, groups, UID and GID.
-- Understand the `root` user and UID 0.
-- Understand the difference between the `root` user, `root` group, and `sudo` group.
-- Understand how `sudo` provides temporary elevated privileges.
-- Understand root shells and the difference between `sudo -i` and `su -`.
-- Create and manage a normal Linux user.
-- Add and remove a user from the `sudo` group.
-- Understand Linux file ownership.
-- Understand owner, group, and others permissions.
-- Understand read, write, and execute permissions.
-- Practise `chmod` using numeric permissions such as `600` and `755`.
-- Practise `chown` for changing file ownership.
-- Understand important Linux filesystem directories.
-- Examine authentication and `sudo` activity in system logs.
-- Connect Linux access control with Authentication, Authorization and Accounting (AAA).
-- Apply the principle of least privilege and Defense in Depth concepts.
+
+* Understand Linux users, groups, UID and GID.
+* Understand the `root` user and UID 0.
+* Understand the difference between the `root` user, `root` group, and `sudo` group.
+* Understand how `sudo` provides temporary elevated privileges.
+* Understand root shells and the difference between `sudo -i` and `su -`.
+* Create and manage a normal Linux user.
+* Add and remove a user from the `sudo` group.
+* Understand Linux file ownership.
+* Understand owner, group, and others permissions.
+* Understand read, write, and execute permissions.
+* Practise `chmod` using numeric permissions such as `600` and `755`.
+* Practise `chown` for changing file ownership.
+* Understand important Linux filesystem directories.
+* Examine authentication and `sudo` activity in system logs.
+* Connect Linux access control with Authentication, Authorization and Accounting (AAA).
+* Apply the principle of least privilege and Defense in Depth concepts.
 
 ## Software Requirements
-- VMware Workstation
-- Ubuntu Server
-- Terminal
-- `labuser` Linux account created during the practical
+
+* VMware Workstation
+* Ubuntu Server
+* Terminal
+* `labuser` Linux account created during the practical
 
 ## Lab Environment
 
-| Component | Purpose |
-|---|---|
-| Ubuntu Server | Linux operating system used for the practical |
-| `labuser` | Additional normal user used to test authorization and privileges |
-| Terminal | Command execution and verification |
-| `/var/log/auth.log` | Authentication and `sudo` activity review |
+|Component|Purpose|
+|-|-|
+|Ubuntu Server|Linux operating system used for the practical|
+|`labuser`|Additional normal user used to test authorization and privileges|
+|Terminal|Command execution and verification|
+|`/var/log/auth.log`|Authentication and `sudo` activity review|
 
 ## Procedure
 
-### 1. Check Current User, UID, GID and Groups
+### 1\. Check Current User, UID, GID and Groups
 
 Checked the current identity using:
 
@@ -52,12 +55,12 @@ The `whoami` command identifies the current user, while `id` displays UID, GID a
 
 ### Evidence
 
-![Figure 4.1 – Current user, UID, GID and group information](./screenshots/01-user-id-groups.png)
+!\[Figure 4.1 – Current user, UID, GID and group information](./screenshots/01-user-id-groups.png)
 *Figure 4.1 – Current user, UID, GID and group information*
 
----
+\---
 
-### 2. Understand the Root User
+### 2\. Understand the Root User
 
 Checked the root account:
 
@@ -77,12 +80,12 @@ The `root` user is normally identified by UID `0`.
 
 ### Evidence
 
-![Figure 4.2 – Root user identity and sudo execution](./screenshots/02-root-and-sudo.png)
+!\[Figure 4.2 – Root user identity and sudo execution](./screenshots/02-root-and-sudo.png)
 *Figure 4.2 – Root user identity and sudo execution*
 
----
+\---
 
-### 3. Test Permission Denied and sudo
+### 3\. Test Permission Denied and sudo
 
 A normal user attempted to create a file directly under `/`:
 
@@ -108,15 +111,15 @@ sudo rm /testfile
 
 ### Evidence
 
-![Figure 4.3 – Permission denied for a privileged operation](./screenshots/03-permission-denied.png)
+!\[Figure 4.3 – Permission denied for a privileged operation](./screenshots/03-permission-denied.png)
 *Figure 4.3 – Permission denied for a privileged operation*
 
-![Figure 4.4 – Same operation successfully executed with sudo](./screenshots/04-sudo-command.png)
+!\[Figure 4.4 – Same operation successfully executed with sudo](./screenshots/04-sudo-command.png)
 *Figure 4.4 – Same operation successfully executed with sudo*
 
----
+\---
 
-### 4. Create a New User
+### 4\. Create a New User
 
 Created a separate Linux user:
 
@@ -150,12 +153,12 @@ labuser
 
 ### Evidence
 
-![Figure 4.5 – Creation and verification of labuser](./screenshots/05-create-labuser.png)
+!\[Figure 4.5 – Creation and verification of labuser](./screenshots/05-create-labuser.png)
 *Figure 4.5 – Creation and verification of labuser*
 
----
+\---
 
-### 5. Test and Grant sudo Authorization
+### 5\. Test and Grant sudo Authorization
 
 Initially, `labuser` was a normal user without `sudo` authorization.
 
@@ -193,12 +196,12 @@ root
 
 ### Evidence
 
-![Figure 4.6 – labuser sudo authorization](./screenshots/06-sudo-group.png)
+!\[Figure 4.6 – labuser sudo authorization](./screenshots/06-sudo-group.png)
 *Figure 4.6 – labuser before and after sudo authorization*
 
----
+\---
 
-### 6. Remove sudo Authorization
+### 6\. Remove sudo Authorization
 
 Sudo access was also tested in reverse.
 
@@ -224,15 +227,15 @@ After starting a new session, `labuser` can no longer use `sudo`.
 
 This demonstrates that authorization can be granted and revoked without deleting the user account.
 
----
+\---
 
-### 7. Understand Root Group vs sudo Group
+### 7\. Understand Root Group vs sudo Group
 
 The practical clarified the difference between:
 
-- `root` user
-- `root` group
-- `sudo` group
+* `root` user
+* `root` group
+* `sudo` group
 
 The `root` user is the superuser account and normally has UID `0`.
 
@@ -244,9 +247,9 @@ A user being a member of `sudo` does not mean the user is a member of the `root`
 
 A user can technically belong to the `root` group, but group membership alone does not turn that user into the root user.
 
----
+\---
 
-### 8. Understand Root Shells
+### 8\. Understand Root Shells
 
 Two methods of obtaining a root shell were discussed.
 
@@ -282,9 +285,9 @@ sudo passwd root
 
 The important distinction is that `sudo` is an authorization mechanism, while `su` switches to another account after authentication.
 
----
+\---
 
-### 9. Understand File Ownership
+### 9\. Understand File Ownership
 
 Created a file using elevated privileges:
 
@@ -330,12 +333,12 @@ chown USER:GROUP FILE
 
 ### Evidence
 
-![Figure 4.7 – File ownership before and after chown](./screenshots/07-file-ownership.png)
+!\[Figure 4.7 – File ownership before and after chown](./screenshots/07-file-ownership.png)
 *Figure 4.7 – File ownership before and after chown*
 
----
+\---
 
-### 10. Understand Owner, Group and Others
+### 10\. Understand Owner, Group and Others
 
 Linux file permissions are divided into three classes:
 
@@ -364,9 +367,9 @@ The important rule is that Linux does not simply combine all applicable permissi
 
 A user's own group is not automatically the file's permission group. What matters is whether the user belongs to the group assigned to the file.
 
----
+\---
 
-### 11. Understand Read, Write and Execute
+### 11\. Understand Read, Write and Execute
 
 A permission string such as:
 
@@ -386,15 +389,15 @@ can be divided into:
 
 Permission values:
 
-| Permission | Meaning | Value |
-|---|---|---:|
-| `r` | Read | 4 |
-| `w` | Write | 2 |
-| `x` | Execute | 1 |
+|Permission|Meaning|Value|
+|-|-|-:|
+|`r`|Read|4|
+|`w`|Write|2|
+|`x`|Execute|1|
 
----
+\---
 
-### 12. Practise chmod 600
+### 12\. Practise chmod 600
 
 Created a test file:
 
@@ -426,12 +429,12 @@ Strict permissions such as `600` are particularly important for sensitive files 
 
 ### Evidence
 
-![Figure 4.8 – chmod 600 and resulting permissions](./screenshots/08-chmod-600.png)
+!\[Figure 4.8 – chmod 600 and resulting permissions](./screenshots/08-chmod-600.png)
 *Figure 4.8 – chmod 600 and resulting permissions*
 
----
+\---
 
-### 13. Practise chmod 755
+### 13\. Practise chmod 755
 
 Created a directory:
 
@@ -469,9 +472,9 @@ Others -> r-x
 
 The purpose was to understand the calculation rather than simply memorize `755`.
 
----
+\---
 
-### 14. Explore the Linux Filesystem
+### 14\. Explore the Linux Filesystem
 
 Inspected the root filesystem:
 
@@ -481,27 +484,27 @@ ls /
 
 Important directories were identified:
 
-| Directory | Purpose |
-|---|---|
-| `/home` | Normal users' home directories |
-| `/root` | Root user's home directory |
-| `/etc` | System and service configuration |
-| `/var/log` | System and application logs |
-| `/tmp` | Temporary files |
-| `/usr/bin` | Many user commands and programs |
-| `/bin` | Essential commands |
-| `/sbin` | System administration commands |
-| `/dev` | Device interfaces |
-| `/proc` | Kernel and process information |
+|Directory|Purpose|
+|-|-|
+|`/home`|Normal users' home directories|
+|`/root`|Root user's home directory|
+|`/etc`|System and service configuration|
+|`/var/log`|System and application logs|
+|`/tmp`|Temporary files|
+|`/usr/bin`|Many user commands and programs|
+|`/bin`|Essential commands|
+|`/sbin`|System administration commands|
+|`/dev`|Device interfaces|
+|`/proc`|Kernel and process information|
 
 ### Evidence
 
-![Figure 4.9 – Linux filesystem root directories](./screenshots/09-filesystem-structure.png)
+!\[Figure 4.9 – Linux filesystem root directories](./screenshots/09-filesystem-structure.png)
 *Figure 4.9 – Linux filesystem root directories*
 
----
+\---
 
-### 15. Examine Authentication and sudo Logs
+### 15\. Examine Authentication and sudo Logs
 
 Authentication activity was examined using:
 
@@ -519,12 +522,12 @@ The logs can contain information about authentication activity, user sessions an
 
 ### Evidence
 
-![Figure 4.10 – Authentication and sudo log entries](./screenshots/10-auth-log.png)
+!\[Figure 4.10 – Authentication and sudo log entries](./screenshots/10-auth-log.png)
 *Figure 4.10 – Authentication and sudo log entries*
 
----
+\---
 
-### 16. Understand Logging Limitations
+### 16\. Understand Logging Limitations
 
 An important distinction was identified during the practical.
 
@@ -555,23 +558,23 @@ The root-shell elevation may be logged, but `auth.log` should not be treated as 
 
 More comprehensive auditing can be implemented using mechanisms such as `auditd`, depending on the system configuration.
 
----
+\---
 
 ## Observations
 
-- Linux separates normal users from the privileged `root` account.
-- UID `0` identifies the root-level identity.
-- A user with `sudo` access does not permanently become the root user.
-- The `sudo` group and `root` group are separate concepts.
-- A file contains both an owner and an owning group.
-- Linux evaluates permissions using owner, group, or others.
-- A user's own group does not automatically determine the file's group permissions.
-- `chmod` changes permission bits, while `chown` changes ownership.
-- `600` provides owner-only read/write access.
-- `755` provides full permissions to the owner and read/execute permissions to group and others.
-- `/etc`, `/home`, `/root`, and `/var/log` are especially important directories for cybersecurity work.
-- `sudo` activity can be logged, but a sudo log is not necessarily a complete record of everything performed inside a root shell.
-- User management and file permissions are practical security controls rather than only operating-system administration concepts.
+* Linux separates normal users from the privileged `root` account.
+* UID `0` identifies the root-level identity.
+* A user with `sudo` access does not permanently become the root user.
+* The `sudo` group and `root` group are separate concepts.
+* A file contains both an owner and an owning group.
+* Linux evaluates permissions using owner, group, or others.
+* A user's own group does not automatically determine the file's group permissions.
+* `chmod` changes permission bits, while `chown` changes ownership.
+* `600` provides owner-only read/write access.
+* `755` provides full permissions to the owner and read/execute permissions to group and others.
+* `/etc`, `/home`, `/root`, and `/var/log` are especially important directories for cybersecurity work.
+* `sudo` activity can be logged, but a sudo log is not necessarily a complete record of everything performed inside a root shell.
+* User management and file permissions are practical security controls rather than only operating-system administration concepts.
 
 ## Security Concepts
 
@@ -629,7 +632,7 @@ Monitoring
 
 The Linux OS fundamentals practical was successfully completed. Users, groups, root privileges, `sudo`, root shells, `su`, file ownership, permissions, filesystem structure, authentication logs, AAA, least privilege, and Defense in Depth were understood and practically verified on the Ubuntu Server VM.
 
-These concepts provide the required operating-system foundation for the next practical, **SSH Authentication and Key-Based Authentication**, where users, permissions, authentication and networking will be combined.
+
 
 ## Commands Used
 
@@ -701,32 +704,33 @@ sudo grep "sudo" /var/log/auth.log | tail
 
 ## Evidence
 
-![Figure 4.1 – Current user, UID, GID and group information](./screenshots/01-user-id-groups.png)
+!\[Figure 4.1 – Current user, UID, GID and group information](./screenshots/01-user-id-groups.png)
 *Figure 4.1 – Current user, UID, GID and group information*
 
-![Figure 4.2 – Root user identity and sudo execution](./screenshots/02-root-and-sudo.png)
+!\[Figure 4.2 – Root user identity and sudo execution](./screenshots/02-root-and-sudo.png)
 *Figure 4.2 – Root user identity and sudo execution*
 
-![Figure 4.3 – Permission denied for a privileged operation](./screenshots/03-permission-denied.png)
+!\[Figure 4.3 – Permission denied for a privileged operation](./screenshots/03-permission-denied.png)
 *Figure 4.3 – Permission denied for a privileged operation*
 
-![Figure 4.4 – Same operation successfully executed with sudo](./screenshots/04-sudo-command.png)
+!\[Figure 4.4 – Same operation successfully executed with sudo](./screenshots/04-sudo-command.png)
 *Figure 4.4 – Same operation successfully executed with sudo*
 
-![Figure 4.5 – Creation and verification of labuser](./screenshots/05-create-labuser.png)
+!\[Figure 4.5 – Creation and verification of labuser](./screenshots/05-create-labuser.png)
 *Figure 4.5 – Creation and verification of labuser*
 
-![Figure 4.6 – labuser sudo authorization](./screenshots/06-sudo-group.png)
+!\[Figure 4.6 – labuser sudo authorization](./screenshots/06-sudo-group.png)
 *Figure 4.6 – labuser before and after sudo authorization*
 
-![Figure 4.7 – File ownership before and after chown](./screenshots/07-file-ownership.png)
+!\[Figure 4.7 – File ownership before and after chown](./screenshots/07-file-ownership.png)
 *Figure 4.7 – File ownership before and after chown*
 
-![Figure 4.8 – chmod 600 and resulting permissions](./screenshots/08-chmod-600.png)
+!\[Figure 4.8 – chmod 600 and resulting permissions](./screenshots/08-chmod-600.png)
 *Figure 4.8 – chmod 600 and resulting permissions*
 
-![Figure 4.9 – Linux filesystem root directories](./screenshots/09-filesystem-structure.png)
+!\[Figure 4.9 – Linux filesystem root directories](./screenshots/09-filesystem-structure.png)
 *Figure 4.9 – Linux filesystem root directories*
 
-![Figure 4.10 – Authentication and sudo log entries](./screenshots/10-auth-log.png)
+!\[Figure 4.10 – Authentication and sudo log entries](./screenshots/10-auth-log.png)
 *Figure 4.10 – Authentication and sudo log entries*
+
