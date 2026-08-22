@@ -423,9 +423,9 @@ Expected:
 443/tcp open https
 ```
 
-### Screenshot 9 — HTTP and HTTPS Ports
+### Screenshot 9 — HTTP and HTTPS Ports & Response
 
-![Screenshot 9 — HTTP and HTTPS ports](./screenshots/screenshot-09.png)
+![Screenshot 9 — HTTP and HTTPS ports & response](./screenshots/screenshot-09.png)
 
 **Observation:** Both HTTP and HTTPS services were reachable on their respective TCP ports.
 
@@ -447,10 +447,9 @@ curl -k -I https://192.168.20.1
 
 Both services can return HTTP responses, but HTTPS transports the HTTP communication through a TLS-protected connection.
 
-### Screenshot 10 — HTTP vs HTTPS Response
+### Screenshot 9 — HTTP and HTTPS Ports & Response
 
-![Screenshot 10 — HTTP vs HTTPS response](./screenshots/screenshot-10.png)
-
+![Screenshot 9 — HTTP and HTTPS ports & response](./screenshots/screenshot-09.png)
 ---
 
 # Important Concepts
